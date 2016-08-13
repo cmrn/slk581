@@ -1,0 +1,18 @@
+body {
+  width: 760px;
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+}
+
+ul.names {
+  width:760px;
+  margin-bottom:20px;
+  overflow:hidden;
+}
+
+ul.names li {
+  line-height:1.5em;
+  float:left;
+  display:inline;
+  width: 33.333%;
+}
