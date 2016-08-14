@@ -23,16 +23,18 @@ var NameList = React.createClass({
       );
     });
     return (
-      <ul className="names">
-        {nameNodes}
-      </ul>
+      <div className="namesWrapper">
+        <ol className="names">
+          {nameNodes}
+        </ol>
+      </div>
     );
   }
 });
 
 var InputForm = React.createClass({
   getInitialState: function() {
-    return {slk: 'URBAL241019541'};
+    return {slk: ''};
   },
   handleSlkChange: function(e) {
     this.setState({slk: e.target.value});
@@ -48,12 +50,12 @@ var InputForm = React.createClass({
   },
   render: function() {
     return (
-      <form className="InputForm" onSubmit={this.handleSubmit}>
-        <label>Enter your SLK851</label>
-        <input type="text" placeholder="URBAL241019541"
+      <form className="inputForm" onSubmit={this.handleSubmit}>
+        <label>Enter a SLK851 key</label>
+        <input className="slk" type="text" placeholder="URBAL241019541"
           value={this.state.slk}
           onChange={this.handleSlkChange} />
-        <input type="submit" value="Decode" />
+        <input className="submit" type="submit" value="Decode" />
       </form>
     );
   }
@@ -62,14 +64,16 @@ var InputForm = React.createClass({
 var Results = React.createClass({
   render: function() {
     return (
-      <div>
-        <div className="dob">
-          <h2>Date of Birth</h2>
-          <p>{this.props.results.dob}</p>
-        </div>
-        <div className="gender">
-          <h2>Gender</h2>
-          <p>{this.props.results.gender}</p>
+      <div className="results">
+        <div className="twoCols">
+          <div className="dob">
+            <h2>Date of Birth</h2>
+            <p>{this.props.results.dob}</p>
+          </div>
+          <div className="gender">
+            <h2>Gender</h2>
+            <p>{this.props.results.gender}</p>
+          </div>
         </div>
         <div className="firstNames">
           <h2>First Names</h2>
