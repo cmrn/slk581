@@ -38,6 +38,26 @@ abbr {
   text-decoration: none;
 }
 
+.help {
+  float: right;
+  color: white;
+  text-decoration: none;
+  background-color: #0c7763;
+  opacity: 0.5;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+  border-radius: 40px;
+  font-size: 24px;
+}
+
+.help:hover {
+  opacity: 1;
+}
+
 .twoCols {
   -moz-column-count: 2;
   -webkit-column-count: 2;
