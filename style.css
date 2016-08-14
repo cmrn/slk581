@@ -98,3 +98,16 @@ ol.names > li {
   padding: 10px;
   vertical-align: top;
 }
+
+footer {
+  text-align: right;
+  font-size: 14px;
+  color: #666;
+  margin: 20px 0;
+}
+
+footer a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
