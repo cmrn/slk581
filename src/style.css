@@ -1,9 +1,23 @@
 body {
   max-width: 800px;
-  min-width: 380px;
+  min-width: 420px;
   margin: 0 auto;
   padding: 40px;
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.25em;
+}
+
+h1, h2 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
 }
 
 @media(max-width: 500px) {
@@ -20,7 +34,13 @@ body {
   }
 }
 
+abbr {
+  text-decoration: none;
+}
+
 .twoCols {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
   column-count: 2;
   margin-top: 20px;
 }
@@ -29,7 +49,13 @@ body {
   margin-top: 0;
 }
 
+.gender, .dob {
+  font-size: 18px;
+}
+
 .namesWrapper {
+  -moz-column-width: 180px;
+  -webkit-column-width: 180px;
   column-width: 180px;
 }
 
