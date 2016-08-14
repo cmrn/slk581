@@ -54,7 +54,7 @@ var InputForm = React.createClass({
   render: function() {
     return (
       <form className="inputForm" onSubmit={this.handleSubmit}>
-        <label>Enter a SLK851 key</label>
+        <label>Enter an SLK851 key</label>
         <input className="slk" type="text" placeholder="URBAL241019541"
           value={this.state.slk}
           onChange={this.handleSlkChange} />
