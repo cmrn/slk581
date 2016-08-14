@@ -2,29 +2,29 @@ let assert = require('assert');
 
 require('./src/slkDecoder.js'); // loads constructer into global variable SlkDecoder
 
-describe('SlkDecoder', function() {
-    describe('#decode()', function() {
-      describe('.gender', function() {
-        it('decodes gender ID "1" as "Male"', function() {
+describe('SlkDecoder', () => {
+    describe('#decode()', () => {
+      describe('.gender', () => {
+        it('decodes gender ID "1" as "Male"', () => {
           let decoder = new SlkDecoder([], [], []);
           assert.equal(decoder.decode("AAABB112233331").gender, "Male");
         });
 
-        it('decodes gender ID "2" as "Female"', function() {
+        it('decodes gender ID "2" as "Female"', () => {
           let decoder = new SlkDecoder([], [], []);
           assert.equal(decoder.decode("AAABB112233332").gender, "Female");
         });
       });
 
-      describe('.dob', function() {
-        it('formats DOB into DD/MM/YYYY format', function() {
+      describe('.dob', () => {
+        it('formats DOB into DD/MM/YYYY format', () => {
           let decoder = new SlkDecoder([], [], []);
           assert.equal(decoder.decode("AAABB112233332").dob, "11/22/3333");
         });
       });
 
-      describe('.firstNames', function() {
-        it('finds all matching names', function() {
+      describe('.firstNames', () => {
+        it('finds all matching names', () => {
           let firstNames = ["WALTER", "RALPH", "DALE", "CALVIN"]; // should all match the SLK
           let decoder = new SlkDecoder(firstNames, [], []);
 
@@ -32,7 +32,7 @@ describe('SlkDecoder', function() {
           assert(firstNames.every((name) => results.includes(name)));
         });
 
-        it('excludes non matching names', function() {
+        it('excludes non matching names', () => {
           let firstNames = ["BOBBY"];
           let decoder = new SlkDecoder(firstNames, [], []);
 
@@ -40,7 +40,7 @@ describe('SlkDecoder', function() {
           assert(!results.includes("BOBBY"));
         });
 
-        it('uses correct name list based on gender ID', function() {
+        it('uses correct name list based on gender ID', () => {
           let namesOne = ["WALTER"];
           let namesTwo = ["VALERIE"];
           let decoder = new SlkDecoder(namesOne, namesTwo, []);
@@ -49,8 +49,8 @@ describe('SlkDecoder', function() {
         });
       });
 
-      describe('.lastNames', function() {
-        it('finds all matching names', function() {
+      describe('.lastNames', () => {
+        it('finds all matching names', () => {
           let lastNames = ["TURNBULL", "TURNBOW", "HURLBURT", "HURLBUT"];
           let decoder = new SlkDecoder([], [], lastNames);
 
@@ -58,7 +58,7 @@ describe('SlkDecoder', function() {
           assert(lastNames.every((name) => results.includes(name)));
         });
 
-        it('excludes non matching names', function() {
+        it('excludes non matching names', () => {
           let lastNames = ["SMITH"];
           let decoder = new SlkDecoder([], [], lastNames);
 
