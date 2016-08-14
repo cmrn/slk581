@@ -34,19 +34,22 @@ var NameList = React.createClass({
 
 var InputForm = React.createClass({
   getInitialState: function() {
-    return {slk: ''};
+    return {slk: '', invalid: false};
   },
   handleSlkChange: function(e) {
     this.setState({slk: e.target.value});
   },
   handleSubmit: function(e) {
     e.preventDefault();
-    var slk = this.state.slk.trim();
-    if (!slk) { // TODO: validate SLK
-      return;
+    var slk = this.state.slk.trim().toUpperCase();
+
+    if (!slk || !SlkDecoder.isValid(slk)) {
+      this.setState({invalid: true});
+      return false;
     }
+
+    this.setState({invalid: false});
     this.props.slkCallback(slk);
-    // TODO: process SLK
   },
   render: function() {
     return (
@@ -56,6 +59,7 @@ var InputForm = React.createClass({
           value={this.state.slk}
           onChange={this.handleSlkChange} />
         <input className="submit" type="submit" value="Decode" />
+        <div className="error">{this.state.invalid ? "Oops! That doesn't look like an SLK." : ' '}</div>
       </form>
     );
   }
