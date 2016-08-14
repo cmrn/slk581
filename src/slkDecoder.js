@@ -1,3 +1,4 @@
+(function() {
 SlkDecoder = function(firstNamesMale, firstNamesFemale, lastNames) {
   function parseSlkString(slkString) {
     return {
@@ -63,7 +64,6 @@ SlkDecoder = function(firstNamesMale, firstNamesFemale, lastNames) {
   \* ------------------------- */
 
   this.decode = function(slkString) {
-    // TODO: validate SLK string
     var slk = parseSlkString(slkString);
     return {
       firstNames: possibleFirstNames(slk.first, slk.gender),
@@ -73,3 +73,8 @@ SlkDecoder = function(firstNamesMale, firstNamesFemale, lastNames) {
     };
   }
 }
+
+SlkDecoder.isValid = function(slkString) {
+  return slkString.match(/^([A-Z2]{5})(0[1-9]|[1-2][0-9]|3[0-1]|)(1[0-2]|0[1-9])([0-9]{4})([12])$/) !== null;
+}
+})();
