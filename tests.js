@@ -1,4 +1,4 @@
-let assert = require('assert');
+let assert = require('chai').assert;
 
 require('./src/slkDecoder.js'); // loads constructer into global variable SlkDecoder
 
@@ -28,24 +28,24 @@ describe('SlkDecoder', () => {
           let firstNames = ["WALTER", "RALPH", "DALE", "CALVIN"]; // should all match the SLK
           let decoder = new SlkDecoder(firstNames, [], []);
 
-          let results = decoder.decode('URBAL241019541').firstNames;
-          assert(firstNames.every((name) => results.includes(name)));
+          let decoded = decoder.decode('URBAL241019541');
+          assert.sameMembers(decoded.firstNames, firstNames);
         });
 
         it('excludes non matching names', () => {
           let firstNames = ["BOBBY"];
           let decoder = new SlkDecoder(firstNames, [], []);
 
-          let results = decoder.decode('URBAL241019541').firstNames;
-          assert(!results.includes("BOBBY"));
+          let decoded = decoder.decode('URBAL241019541');
+          assert.notInclude(decoded.firstNames, "BOBBY");
         });
 
         it('uses correct name list based on gender ID', () => {
           let namesOne = ["WALTER"];
           let namesTwo = ["VALERIE"];
           let decoder = new SlkDecoder(namesOne, namesTwo, []);
-          assert(decoder.decode('URBAL241019541').firstNames.includes("WALTER"));
-          assert(decoder.decode('URBAL241019542').firstNames.includes("VALERIE"));
+          assert.include(decoder.decode('URBAL241019541').firstNames, "WALTER");
+          assert.include(decoder.decode('URBAL241019542').firstNames, "VALERIE");
         });
       });
 
@@ -55,7 +55,7 @@ describe('SlkDecoder', () => {
           let decoder = new SlkDecoder([], [], lastNames);
 
           let results = decoder.decode('URBAL241019541').lastNames;
-          assert(lastNames.every((name) => results.includes(name)));
+          assert.sameMembers(results, lastNames);
         });
 
         it('excludes non matching names', () => {
@@ -63,7 +63,7 @@ describe('SlkDecoder', () => {
           let decoder = new SlkDecoder([], [], lastNames);
 
           let results = decoder.decode('URBAL241019541').lastNames;
-          assert(!results.includes("SMITH"));
+          assert.notInclude(results, "SMITH");
         });
       });
   });
