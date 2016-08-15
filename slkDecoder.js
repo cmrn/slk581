@@ -77,4 +77,13 @@ SlkDecoder = function(firstNamesMale, firstNamesFemale, lastNames) {
 SlkDecoder.isValid = function(slkString) {
   return slkString.match(/^([A-Z2]{5})(0[1-9]|[1-2][0-9]|3[0-1]|)(1[0-2]|0[1-9])([0-9]{4})([12])$/) !== null;
 }
+
+SlkDecoder.createSlk = function(firstName, lastName, dob, gender) {
+  // Names are padded with '2' for short names as per spec
+  // Non-alphabetic characters are removed
+  firstName = firstName.toUpperCase().replace(/[^A-Z]/g, '') + "22222";
+  lastName = lastName.toUpperCase().replace(/[^A-Z]/g, '') + "22222";
+  return lastName.slice(1,3) + lastName[4] + firstName.slice(1,3) + dob + gender;
+}
+
 })();
