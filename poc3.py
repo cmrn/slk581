@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 
-from sys import stdin, stdout
 import re
 
-with open('first-names-female.txt') as f:
+with open('src/data/first-names-female.txt') as f:
     female_names = f.read().splitlines()
-with open('first-names-male.txt') as f:
+with open('src/data/first-names-male.txt') as f:
     male_names = f.read().splitlines()
-with open('last-names.txt') as f:
+with open('src/data/last-names.txt') as f:
     last_names = f.read().splitlines()
 
 intsex_names = female_names + male_names
