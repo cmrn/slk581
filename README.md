@@ -1,6 +1,7 @@
 [SLK581 Decoder](https://cmrn.github.io/slk581)
 ==============
-✨ [Take me to the decoder!](https://cmrn.github.io/slk581) ✨
+✨ [Decode an SLK!](https://cmrn.github.io/slk581) ✨   
+✨ [Create an SLK!](https://cmrn.github.io/slk581/create.html) ✨
 
 What is this?
 -------------
@@ -16,7 +17,7 @@ Simply take an SLK581 and enter it into the tool. The page processes the SLK
 in your web browser - no information is sent to a server.
 
 ### Sample SLKs ###
-Don't have an SLK581 handy? Has the Australian Census 2016 data not leaked yet? Try these sample SLKs to see how easy it is to match an SLK back to a person.
+Don't have an SLK581 handy? Has the Australian Census 2016 data not leaked yet? [You can create your own SLK here](https://cmrn.github.io/slk581/create.html), or try these sample SLKs to see how easy it is to match an SLK back to a person.
 
 - `URBAL241019541` (Malcolm Turnbull)
 - `CCRIC020819641` (Michael McCormack)
