@@ -31,16 +31,14 @@ Don't have an SLK581 handy? Has the Australian Census 2016 data not leaked yet? 
 
 What's an SLK581?
 -----------------
-An SLK581, or "Statistical Linkage Key 581", is a 13 character key formulated from a person's name, date of birth, and gender in the format `LLLFFDDMMYYYYG`, where:
+An SLK581, or "Statistical Linkage Key 581", is a 13 character key formulated from a person's name, date of birth, and sex in the format `LLLFFDDMMYYYYS`, where:
 
 - `LLL`: 2nd, 3rd, and 5th characters of the last name
 - `FF`: 2nd and 3rd characters of the first name
 - `DDMMYYYY`: Date of birth
-- `G`: Gender, where 1 is Male and 2 is Female (\*)
+- `S`: Sex, where 1 is Male, 2 is Female, 3 is intersex or non-binary and 4 is Not stated (\*)
 
 The complete definition of the SLK581 format can be found on the [METeOR website](http://meteor.aihw.gov.au/content/index.phtml/itemId/349510).
-
-\* The definition of SLK581 uses a binary definition of gender and does not provide adequate options for transgender and non-binary identities. This is yet another reason why the use of SLK581 should be avoided.
 
 Data
 ----
