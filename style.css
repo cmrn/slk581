@@ -175,10 +175,17 @@ input.submit {
 }
 
 footer {
-  text-align: right;
+  margin: 20px 0;
+}
+
+footer > .credits {
+  float: right;
   font-size: 14px;
   color: #666;
-  margin: 20px 0;
+}
+
+footer > .nav {
+  font-size: 18px;
 }
 
 footer a {
