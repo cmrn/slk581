@@ -39,7 +39,7 @@ An SLK581, or "Statistical Linkage Key 581", is a 13 character key formulated fr
 - `DDMMYYYY`: Date of birth
 - `G`: Gender, where 1 is Male, 2 is Female, 3 is Intersex and 9 is not stated. All non-binary responses use the intersex rule (names from both genders). (\*)
 
-The complete definition of the SLK581 format can be found on the [METeOR website](http://meteor.aihw.gov.au/content/index.phtml/itemId/349510).
+The complete definition of the SLK581 format can be found in the [Aristotle Metadata Registry](http://registry.aristotlemetadata.com/item/349510/datasetspecification/statistical-linkage-key-581-cluster).
 
 \* The definition of SLK581 uses a binary definition of gender and does not provide adequate options for transgender and non-binary identities. This is yet another reason why the use of SLK581 should be avoided.
 
