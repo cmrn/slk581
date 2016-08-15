@@ -1,19 +1,26 @@
-from sys import stdin, stdout
+#!/usr/bin/env python3
+
 import re
 
-with open('first-names-female.txt') as f:
+with open('src/data/first-names-female.txt') as f:
     female_names = f.read().splitlines()
-with open('first-names-male.txt') as f:
+with open('src/data/first-names-male.txt') as f:
     male_names = f.read().splitlines()
-with open('last-names.txt') as f:
+with open('src/data/last-names.txt') as f:
     last_names = f.read().splitlines()
 
 intsex_names = female_names + male_names
 
-stdout.write('SLK: ')
-slk = stdin.readline().strip()
+slkin = input('SLK: ')
+slk = slkin.strip()
 
-slk_gender = slk[-1:]
+if len(slk) < 14:
+    slk_gender = '9'
+elif len(slk) == 14:
+    slk_gender = slk[-1:]
+else:
+    slk_gender = slk[13]
+
 slk_first = slk[3:5].replace('2', '.')
 slk_last = slk[0:3].replace('2', '.')
 slk_dob = slk[5:13]
@@ -37,5 +44,5 @@ print("First names:")
 print(first)
 print("Last names:")
 print(last)
-print("Date of birth: {}/{}/{}".format(slk_dob[0:2], slk_dob[2:4], slk_dob[4:8]))
-print("Gender: {}".format(gender_type))
+print(("Date of birth: {}/{}/{}".format(slk_dob[0:2], slk_dob[2:4], slk_dob[4:8])))
+print(("Gender: {}".format(gender_type)))
