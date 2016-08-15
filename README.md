@@ -1,5 +1,6 @@
-SLK581 Decoder
+[SLK581 Decoder](https://cmrn.github.io/slk581)
 ==============
+✨ [Take me to the decoder!](https://cmrn.github.io/slk581) ✨
 
 What is this?
 -------------
@@ -23,6 +24,8 @@ Don't have an SLK581 handy? Has the Australian Census 2016 data not leaked yet? 
 - `ANOAU270519542` (Pauline Hanson)
 - `ALSAV111111111` (David Kalisch)
 - `OO2AM111111111` ([Cameron Moon](https://twitter.com/cmrn))
+
+✨ [Try it now!](https://cmrn.github.io/slk581) ✨
 
 (Note: people without a public date of birth are given as 11/11/1111)
 
