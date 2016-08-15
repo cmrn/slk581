@@ -95,6 +95,9 @@ ol.names > li {
 }
 
 .inputForm > input.submit {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
   border: none;
   background-color: #0c7763;
   color: white;
