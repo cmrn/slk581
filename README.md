@@ -20,9 +20,9 @@ Don't have an SLK581 handy? Has the Australian Census 2016 data not leaked yet? 
 
 - `URBAL241019541` (Malcolm Turnbull)
 - `CCRIC020819641` (Michael McCormack)
-- `ORICO130519681` (Scott Morison)
+- `ORICO130519681` (Scott Morrison)
 - `ANOAU270519542` (Pauline Hanson)
-- `BBTON041119571` (Tony Annott)
+- `BBTON041119571` (Tony Abbott)
 - `ALSAV111111111` (David Kalisch)
 - `OO2AM111111111` ([Cameron Moon](https://twitter.com/cmrn))
 
