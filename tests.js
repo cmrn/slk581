@@ -121,4 +121,31 @@ describe('SlkDecoder', () => {
       });
     });
   });
+
+  describe("#createSlk()", () => {
+    it("creates a correct SLK", () => {
+      let slk = SlkDecoder.createSlk("Malcolm", "Turnbull", "24101954", "1");
+      assert.equal(slk, "URBAL241019541");
+    });
+
+    it("pads short last names with 2s", () => {
+      let slk = SlkDecoder.createSlk("Malcolm", "Zu", "24101954", "1");
+      assert.equal(slk, "U22AL241019541");
+    });
+
+    it("pads short first names with 2s", () => {
+      let slk = SlkDecoder.createSlk("Ed", "Turnbull", "24101954", "1");
+      assert.equal(slk, "URBD2241019541");
+    });
+
+    it("handles non-alphabetic characters in first name", () => {
+      let slk = SlkDecoder.createSlk("Hi-Ho", "Turnbull", "24101954", "1");
+      assert.equal(slk, "URBIH241019541");
+    });
+
+    it("handles non-alphabetic characters in last name", () => {
+      let slk = SlkDecoder.createSlk("Malcolm", "O'Malley", "24101954", "1");
+      assert.equal(slk, "MALAL241019541");
+    });
+  });
 });
